@@ -9,8 +9,8 @@ defmodule VikipartyWeb.RoomChannel do
     end
   end
 
-  def handle_in("new_msg", %{"body" => body}, socket) do
-    broadcast! socket, "new_msg", %{body: body}
+  def handle_in("new_msg", %{"body" => body, "username" => username}, socket) do
+    broadcast! socket, "new_msg", %{body: body, username: username}
     {:noreply, socket}
   end
 
