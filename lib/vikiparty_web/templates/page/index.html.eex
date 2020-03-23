@@ -1,0 +1,6 @@
+<section class="phx-hero">
+  <p>Phoenix channels based chat</p>
+</section>
+
+<div id="messages"></div>
+<input id="chat-input" type="text"></input>
