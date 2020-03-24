@@ -11,9 +11,10 @@ defmodule Vikiparty.Application do
       # Start the Ecto repository
       Vikiparty.Repo,
       # Start the endpoint when the application starts
-      VikipartyWeb.Endpoint
+      VikipartyWeb.Endpoint,
       # Starts a worker by calling: Vikiparty.Worker.start_link(arg)
       # {Vikiparty.Worker, arg},
+      VikipartyWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
