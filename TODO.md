@@ -5,3 +5,4 @@
     - Use is announcement flag
 - Implement play/pause jquery
 - Use presence for joins and leaves
+- Bind names to joins and leaves
