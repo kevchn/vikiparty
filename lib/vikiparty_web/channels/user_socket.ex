@@ -17,7 +17,6 @@ defmodule VikipartyWeb.UserSocket do
   # performing token verification on connect.
   def connect(params, socket, _connect_info) do
     socket = assign(socket, :user_id, params["user_id"])
-    socket = assign(socket, :username, params["username"])
     {:ok, socket}
   end
 
