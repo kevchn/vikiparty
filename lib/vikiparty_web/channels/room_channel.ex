@@ -20,6 +20,16 @@ defmodule VikipartyWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("set_username", %{"username" => username}, socket) do
+    socket = assign(socket, :username, username)
+    broadcast! socket, "new_msg", %{body: "joined",
+                                    username: socket.assigns.username,
+                                    user_id: socket.assigns.user_id,
+                                    timestamp: :os.system_time(:millisecond),
+                                    is_announcement: true}
+    {:noreply, socket}
+  end
+
   def handle_in("change_username", %{"username" => username}, socket) do
     broadcast! socket, "new_msg", %{body: "changed username to " <> username,
                                     username: socket.assigns.username,
